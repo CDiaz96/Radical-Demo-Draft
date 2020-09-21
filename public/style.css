@@ -1,0 +1,89 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+.jumbotron{
+  background-color:white;
+  width: 70%;
+  height: 500px;
+  margin-left: 80%;
+}
+#sign{
+  background-color:white;
+  width: 60%;
+  height: 865px;
+  margin-left: 20%;
+}
+#cointainer{
+  background-color:white;
+  width: 40%;
+  height:400px;
+  margin-left: 32%;
+}
+.jumbotron{
+  width: 40%;
+  margin-left: 28%;
+  font-family: sans-serif;
+}
+.top{
+  color: white;
+}
+.first, .login, .sign{
+  background-image: url('https://data.whicdn.com/images/180851656/original.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#hold{
+  width: 20%;
+  height: 400px;
+  margin-left: 5%;
+  float: left;
+  border: 1px solid black;
+  background-color:  white;
+}
+nav{
+  width: 100%;
+  height: 100px;
+  margin-left: 7%;
+  text-decoration: none;
+}
+nav > a{
+  float: left;
+  margin-left: 4%;
+}
+nav >form{
+  width: 30%;
+  float: left;
+  margin-left: 4%;
+}
+nav > section{
+  width: 30%;
+  float: left;
+}
+h2{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.one, .two, .three, .four{
+  width:50%;
+  height: 150px;
+  float: left;
+  border: 1px solid black;
+}
+.news, .resource{
+  width: 70%;
+  height: 400px;
+  float: left;
+  border: 1px solid black;
+}
+h1{
+  text-align: center;
+}
+.contact{
+  width: 90%;
+  margin-left: 5%;
+
+}
