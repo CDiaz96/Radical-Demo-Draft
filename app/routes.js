@@ -27,7 +27,7 @@ module.exports = function(app, passport, db) {
           })
         })
     });
-//UPDATES SECTION==================
+//UPDATES SECTION=====================
     app.get('/updates', isLoggedIn, function(req, res) {
         db.collection('messages').find().toArray((err, result) => {
           if (err) return console.log(err)
@@ -37,9 +37,21 @@ module.exports = function(app, passport, db) {
           })
         })
     });
+//FORMS PAGE============================
+    app.get('/forms', isLoggedIn, function(req, res) {
+        db.collection('messages').find().toArray((err, result) => {
+          if (err) return console.log(err)
+          res.render('forms.ejs', {
+            user : req.user,
+            messages: result
+          })
+        })
+    });
 //CONTACTS PAGE========================
     app.get('/contact', isLoggedIn, function(req, res) {
         db.collection('messages').find().toArray((err, result) => {
+          // let test= db.collection('').find().toArray()
+          console.log('hello!!')
           if (err) return console.log(err)
           res.render('contact.ejs', {
             user : req.user,
@@ -53,29 +65,10 @@ module.exports = function(app, passport, db) {
         res.redirect('/');
     });
 
+
+
 // message board routes ===============================================================
 
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/profile')
-      })
-    })
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/resources')
-      })
-    })
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/updates')
-      })
-    })
     app.post('/messages', (req, res) => {
       db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
         if (err) return console.log(err)
@@ -121,6 +114,20 @@ module.exports = function(app, passport, db) {
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
+
+        //CLIENT SIGNUP====================================
+        // show the signup form
+        app.get('/clientsignup', function(req, res) {
+            res.render('clientsignup.ejs', { message: req.flash('signupMessage') });
+        });
+
+        // process the signup form
+        app.post('/clientsignup', passport.authenticate('local-signup', {
+            successRedirect : '/profile', // redirect to the secure profile section
+            failureRedirect : '/clientsignup', // redirect back to the signup page if there is an error
+            failureFlash : true // allow flash messages
+        }));
+
 
 // =============================================================================
 // UNLINK ACCOUNTS =============================================================

@@ -8,61 +8,32 @@
 </head>
 <body id="main">
  <div class="container-fluid">
-<h1>Contact</h1>
+
     <!--Navbar -->
     <nav>
+
       <a href="/profile">Home</a>
-      <a href="/resources">Resources</a>
-      <a href="/updates">Updates</a>
-      <a href="/contact">Contact</a>
-      <form class="search" action="index.html" method="post">
-        <input type="text" name="" value="">
-        <button type="button" name="button">Search</button>
+      <a href="/resources">Organizations</a>
+      <a href="/updates">News</a>
+      <a href="/forms">Forms</a>
+      <a href="/contact">Connect</a>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      <div id="google_translate_element"></div>
 
-      </form>
-
-      <section>
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </section>
     </nav>
   <!--/.Navbar -->
 
 
-    <div class="row">
-
-         <!-- LOCAL INFORMATION
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div> -->
 
 
-    <section class="contact">
-          <h1>Connect</h1>
-        <section class="one"></section>
-        <section class="two"></section>
-        <section class="three"></section>
-        <section class="four"></section>
-    </section>
-
-    </div>
-</div>
 
 <script src="main.js"></script>
+<script>function googleTranslateElementInit() {
+new google.translate.TranslateElement({
+pageLanguage: 'en'
+}, 'google_translate_element');
+}</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

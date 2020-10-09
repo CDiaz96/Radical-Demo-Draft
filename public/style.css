@@ -67,17 +67,15 @@ h2{
   font-size: 20px;
   font-family: sans-serif;
 }
-.one, .two, .three, .four{
-  width:50%;
-  height: 150px;
-  float: left;
-  border: 1px solid black;
+.resource{
+  border-top: 2px solid black;
+  margin-top: 3%;
 }
-.news, .resource{
-  width: 70%;
-  height: 400px;
-  float: left;
+.resources{
+  width: 90%;
+  margin-left: 5%;
   border: 1px solid black;
+  padding: 2%;
 }
 h1{
   text-align: center;
@@ -86,4 +84,17 @@ h1{
   width: 90%;
   margin-left: 5%;
 
+}
+#articles{
+margin-top: 0;
+margin-bottom: 10px;
+list-style: none;
+}
+.spacer{
+  padding-top: 3%;
+}
+.goog-te-gadget img {
+    vertical-align: middle;
+    border: none;
+    display: none;
 }

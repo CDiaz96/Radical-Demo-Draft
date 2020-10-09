@@ -22,37 +22,19 @@
     </nav>
   <!--/.Navbar -->
 
+<!-----/File Upload----->
+  <div class="title" id="postSec">
+					<h2>Create A Post</h2>
 
-    <!-- <div class="row"> -->
+					<!-- IMAGE UPLOAD -->
+					<form action="/pictureUpload" enctype="multipart/form-data" method="post">
+						<!-- <input type="text" name="caption" value=""> -->
+						<input type="file" name="file-to-upload">
+						<textarea name="caption" cols="40" rows="5" placeholder="Tell us about your art!"></textarea>
+						<input type="submit" value="Upload">
+					</form>
+				</div>
 
-        <!-- LOCAL INFORMATION -->
-        <!-- <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div> -->
-        <section  id="hold">
-          <h2>Stories</h2>
-        </section>
-
-    </div>
-
-    <section class="news">
-      <h1>About Us</h1>
-    </section>
 
 <script src="main.js"></script>
 <script>function googleTranslateElementInit() {

@@ -21,3 +21,38 @@ Array.from(trash).forEach(function (element) {
     })
   });
 });
+
+
+var url = 'http://newsapi.org/v2/everything?' +
+          'q=Immigrants&' +
+          'from=today&' +
+          'to=2020-10-04&' +
+          'sortBy=relevancy&' +
+          'apiKey=e6ed207392614e98bab7cc2c4fa0d93e';
+
+
+
+var req = new Request(url);
+
+fetch(req)
+    .then(response => response.json())
+    .then(function(response) {
+    updateArticles(response.articles);
+    })
+
+function updateArticles(articles){
+  articles.forEach((article, i) => {
+
+    var singleArticle = document.getElementById('articles')
+    let listItem=document.createElement('li');
+    listItem.innerHTML=`<p class="spacer">${article.title} - <span>by:${article.author}</span></p>
+    <p>${article.description}</p><a href="${article.url}">Click Here to Read more!</a>
+
+    `;
+    singleArticle.append(listItem);
+  });
+
+
+
+  console.log(articles)
+}

@@ -8,22 +8,18 @@
 </head>
 <body id="main">
  <div class="container-fluid">
-<h1>Updates</h1>
+
     <!--Navbar -->
     <nav>
+
       <a href="/profile">Home</a>
-      <a href="/resources">Resources</a>
-      <a href="/updates">Updates</a>
-      <a href="/contact">Contact</a>
-      <form class="search" action="index.html" method="post">
-        <input type="text" name="" value="">
-        <button type="button" name="button">Search</button>
+      <a href="/resources">Organizations</a>
+      <a href="/updates">News</a>
+      <a href="/forms">Forms</a>
+      <a href="/contact">Connect</a>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      <div id="google_translate_element"></div>
 
-      </form>
-
-      <section>
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </section>
     </nav>
   <!--/.Navbar -->
 
@@ -49,40 +45,26 @@
 
             </div>
         </div> -->
-        <div  id="hold" class="col-sm-6">
-          <h3>New Updates</h3>
-          <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-            <li class="message">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].msg %></span>
-              <span><%= messages[i].thumbUp %></span>
-              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-            </li>
-          <% } %>
-          </ul>
 
-          <h2>Add a message</h2>
-        <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="message" name="msg">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <% } %>
-
-      </div>
       <section class="news">
         <h1>Most Recent News</h1>
+      </section>
+
+      <section>
+        <ul id="articles">
+
+        </ul>
       </section>
 
     </div>
 
 
 <script src="main.js"></script>
-
+<script>function googleTranslateElementInit() {
+new google.translate.TranslateElement({
+pageLanguage: 'en'
+}, 'google_translate_element');
+}</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
