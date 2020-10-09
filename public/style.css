@@ -1,16 +1,13 @@
 body{
-  padding-top:80px;
+  padding-top:30px;
   word-wrap:break-word;
 }
-img{
-  height: 200px;
-}
-.jumbotron{
+/* .jumbotron{
   background-color:white;
   width: 70%;
   height: 500px;
   margin-left: 80%;
-}
+} */
 #sign{
   background-color:white;
   width: 60%;
@@ -23,26 +20,11 @@ img{
   height:400px;
   margin-left: 32%;
 }
-.jumbotron{
-  width: 40%;
-  margin-left: 28%;
-  font-family: sans-serif;
-}
-.top{
-  color: white;
-}
-.first, .login, .sign{
+
+ .login, .sign{
   background-image: url('https://data.whicdn.com/images/180851656/original.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-#hold{
-  width: 20%;
-  height: 400px;
-  margin-left: 5%;
-  float: left;
-  border: 1px solid black;
-  background-color:  white;
 }
 nav{
   width: 100%;
@@ -83,7 +65,6 @@ h1{
 .contact{
   width: 90%;
   margin-left: 5%;
-
 }
 #articles{
 margin-top: 0;
@@ -97,4 +78,33 @@ list-style: none;
     vertical-align: middle;
     border: none;
     display: none;
+}
+/* INDEX.EJS STYLING */
+.first{
+  background-color: rgba(250,234,207,60%);
+  width: 93%;
+}
+.indexHeader{
+  height: 80px;
+  width: 100%;
+}
+.logins{
+  margin-left: 52%;
+}
+.top{
+  color: rgb(17,68,44);
+  font-family:serif;
+  font-size: 100px;
+}
+#crew{
+  height: 350px;
+  width: 38%;
+  margin-left: 8%;
+}
+#hold{
+  width: 54%;
+  height: 350px;
+  float: right;
+  border: 1px solid black;
+  background-color:  white;
 }

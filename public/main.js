@@ -23,9 +23,17 @@ Array.from(trash).forEach(function (element) {
 });
 
 
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = yyyy + '/' + mm + '/' + dd;
+
+console.log(today)
+
 var url = 'http://newsapi.org/v2/everything?' +
           'q=Immigrants&' +
-          'from=today&' +
+          'from=' + today +'&' +
           'to=2020-10-04&' +
           'sortBy=relevancy&' +
           'apiKey=e6ed207392614e98bab7cc2c4fa0d93e';

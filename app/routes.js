@@ -39,11 +39,11 @@ module.exports = function(app, passport, db) {
     });
 //FORMS PAGE============================
     app.get('/forms', isLoggedIn, function(req, res) {
-        db.collection('messages').find().toArray((err, result) => {
+        db.collection('orgUploads').find().toArray((err, result) => {
           if (err) return console.log(err)
           res.render('forms.ejs', {
             user : req.user,
-            messages: result
+            orgUploads: result
           })
         })
     });
@@ -65,17 +65,18 @@ module.exports = function(app, passport, db) {
         res.redirect('/');
     });
 
-
-
-// message board routes ===============================================================
-
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
+//Forms post Request=================================
+    app.post('/forms', (req, res) => {
+      db.collection('orgUploads').save({name: req.body.name, desc: req.body.desc }, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
-        res.redirect('/contact')
+        res.redirect('/forms')
+        console.log('random message')
+        console.log(req.body.desc)
       })
+
     })
+
 
     app.delete('/messages', (req, res) => {
       db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
@@ -141,6 +142,7 @@ module.exports = function(app, passport, db) {
         var user            = req.user;
         user.local.email    = undefined;
         user.local.password = undefined;
+          user.local.organization = undefined;
         user.save(function(err) {
             res.redirect('/profile');
         });

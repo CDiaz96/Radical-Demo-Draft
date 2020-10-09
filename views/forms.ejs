@@ -21,20 +21,38 @@
 
     </nav>
   <!--/.Navbar -->
+<ul class="messages">
+      <% for(var i=0;i <orgUploads.length; i++) {%>
 
-<!-----/File Upload----->
-  <div class="title" id="postSec">
+        <li class="message">
+          <span><%= orgUploads[i].name %></span>
+          <span><%= orgUploads[i].desc %></span>
+
+      <% } %>
+     </li>
+  </ul>
+
+<!---/File Upload----->
+<% if (user.local.organization) { %>
+  <div class="title" id="formUp">
 					<h2>Create A Post</h2>
 
+          <form class="" action="/forms" method="post">
+            <input type="text" name="name" value="">
+            <!-- <input type="file" name="file" value=""> -->
+            <textarea name="desc" rows="8" cols="80"></textarea>
+            <input type="submit" name="" value="upload">
+          </form>
 					<!-- IMAGE UPLOAD -->
-					<form action="/pictureUpload" enctype="multipart/form-data" method="post">
-						<!-- <input type="text" name="caption" value=""> -->
-						<input type="file" name="file-to-upload">
-						<textarea name="caption" cols="40" rows="5" placeholder="Tell us about your art!"></textarea>
+					<!-- <form action="/forms"  method="post">
+						<!- <input type="text" name="caption" value=""> -->
+						<!-- <input type="file" name="file-to-upload">
+						<textarea name="caption" cols="40" rows="5" placeholder="Tell us about your form!"></textarea>
 						<input type="submit" value="Upload">
-					</form>
+					</form> -->
 				</div>
 
+  <% } %>
 
 <script src="main.js"></script>
 <script>function googleTranslateElementInit() {
