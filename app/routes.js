@@ -49,7 +49,7 @@ module.exports = function(app, passport, db, multer) {
             'local.firstname': req.body.firstname,
             'local.lastname': req.body.lastname,
             'local.description': req.body.description,
-            'local.profileImg': "uploads/"+ req.file.filename
+            'local.profileImg': "uploads/"+ req.file.filename,
           }
         }, {
           sort: {
