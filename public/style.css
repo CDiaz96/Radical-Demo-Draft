@@ -8,7 +8,12 @@ margin-top: 0;
 margin-bottom: 10px;
 list-style: none;
 }
-
+#msgs{
+  list-style-type:none;
+}
+#cointainer{
+  margin-left: 25%;
+}
 /*--------------------------------Navigation--------------------------------*/
 .navbar {
   background: linear-gradient(40deg, rgba(0,51,199,.3), rgba(209,149,249,.3));

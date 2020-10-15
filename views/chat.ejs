@@ -6,7 +6,7 @@
 <div class="container my-5">
 
   <!-- Section: Block Content -->
-  <!-- <section>
+  <section>
 
     <style>
       .my-custom-scrollbar {
@@ -32,77 +32,40 @@
           <li><i class="fas fa-times fa-sm pl-3"></i></li>
         </ul>
       </div>
+
       <div class="card-body my-custom-scrollbar">
-        <div class="media">
-          <img class="avatar rounded-circle card-img-35 z-depth-1 d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" alt="Generic placeholder image">
-          <div class="media-body">
-            <p class="mt-0 font-weight-bold small mb-1">Johny Danish<span class="text-muted float-right small mt-3p">12 Nov 3:00 PM</span></p>
-            <p class="mb-0 font-weight-light small grey lighten-2 p-2 rounded">Is this template really for free? That's unbelievable!</p>
-          </div>
-        </div>
 
-       	<div class="media mt-3">
-          <div class="media-body">
-            <p class="mt-0 font-weight-bold small mb-1"><span class="text-muted small mt-3p">12 Nov 3:05 PM</span><span class="float-right">Alice Cooper</span></p>
-            <p class="mb-0 font-weight-light small primary-color text-white p-2 rounded">You better believe it!</p>
-          </div>
-          <img class="avatar rounded-circle card-img-35 z-depth-1 d-flex ml-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" alt="Generic placeholder image">
-        </div>
+      <form id="form" class="" action="/chat" method="post">
 
-        <div class="media mt-3">
-          <img class="avatar rounded-circle card-img-35 z-depth-1 d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" alt="Generic placeholder image">
-          <div class="media-body">
-            <p class="mt-0 font-weight-bold small mb-1">Johny Danish<span class="text-muted float-right small mt-3p">12 Nov 6:17 PM</span></p>
-            <p class="mb-0 font-weight-light small grey lighten-2 p-2 rounded">Working with MDB Admin on a great new app! Wanna join?</p>
-          </div>
-        </div>
+        <ul id="msgs">
+        <% if(firstMsg){ %>
+          <li>
+            <span><%=otherUser.local.firstname%></span>
+            <span><%=firstMsg%></span></li>
+        <%}%>
+        </ul>
 
-       	<div class="media mt-3">
-          <div class="media-body">
-            <p class="mt-0 font-weight-bold small mb-1"><span class="text-muted small mt-3p">12 Nov 6:23 PM</span><span class="float-right">Alice Cooper</span></p>
-            <p class="mb-0 font-weight-light small primary-color text-white p-2 rounded">I would love to.</p>
-          </div>
-          <img class="avatar rounded-circle card-img-35 z-depth-1 d-flex ml-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" alt="Generic placeholder image">
-        </div>
-      </div>
       <div class="card-footer white py-3">
         <div class="form-group mb-0">
-          <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" placeholder="Type message..."></textarea>
+
+          <!--TEXT AREA TO SEND MSG--->
+          <textarea id="chatMsg" type="text" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" placeholder="Type message..."></textarea>
           <div class="text-right pt-2">
-            <button class="btn btn-primary btn-sm mb-0 mr-0">Send</button>
+
+            <!--SEND BUTTON-->
+            <button class="btn btn-primary btn-sm mb-0 mr-0" id="submitButton" type="button" name="button">Send</button>
           </div>
         </div>
       </div>
+     </form>
+    </div>
     </div>
 
-  </section> -->
+  </section>
   <!-- Section: Block Content -->
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<form id="form" class="" action="/chat" method="post">
-<input id="chatMsg" type="text" name="" value="">
-<button  id="submitButton" type="button" name="button">Submit</button>
-</form>
-
-<ul id="msgs">
-<% if(firstMsg){ %>
-  <li><%=otherUser.local.firstname%> <%=firstMsg%> </li>
-<%}%>
-</ul>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
