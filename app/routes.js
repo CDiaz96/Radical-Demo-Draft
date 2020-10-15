@@ -121,24 +121,32 @@ module.exports = function(app, passport, db, multer) {
 //============================CONTACTS PAGE=====================================
     app.get('/contact', isLoggedIn, function(req, res) {
         db.collection('users').find().toArray((err, allUsers) => {
+          // var orgs = allUsers.filter((e)=>{
+          //   if(e[0].organization){
+          //
+          //   return e[0].organization
+          // }
+          // })
+        
           // let test= db.collection('').find().toArray()
-          if (err) return console.log(err)
+           if (err) return console.log(err)
           res.render('contact.ejs', {
             user : req.user,
             contacts: allUsers
+
           })
         })
     });
-    app.post('/contact', isLoggedIn, function(req, res) {
-        db.collection('users').find().toArray((err, allUsers) => {
-          // let test= db.collection('').find().toArray()
-          if (err) return console.log(err)
-          res.render('contact.ejs', {
-            user : req.user,
-            contacts: allUsers
-          })
-        })
-    });
+    // app.post('/contact', isLoggedIn, function(req, res) {
+    //     db.collection('users').find().toArray((err, allUsers) => {
+    //       // let test= db.collection('').find().toArray()
+    //       if (err) return console.log(err)
+    //       res.render('contact.ejs', {
+    //         user : req.user,
+    //         contacts: allUsers
+    //       })
+    //     })
+    // });
 //============================CHAT PAGE=====================================
     app.get('/chat', isLoggedIn, function(req, res) {
 
