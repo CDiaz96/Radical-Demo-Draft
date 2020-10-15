@@ -55,16 +55,26 @@ module.exports = function(passport) {
 
 				// if there is no user with that email
                 // create the user
-                var newUser            = new User();
+                var newUser = new User();
 
                 // set the user's local credentials
                 newUser.local.email    = email;
-                newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
+                newUser.local.password = newUser.generateHash(password);
+                 // use the generateHash function in our user model
                 newUser.local.organization = req.body.organization;
+
+                newUser.local.firstname = req.body.firstname;
+
+                newUser.local.lastname = req.body.lastname;
+
+                newUser.local.profileImg = req.body.profileImg;
+
+
 				// save the user
                 newUser.save(function(err) {
                     if (err)
                         throw err;
+                        console.log('created new user', newUser)
                     return done(null, newUser);
                 });
             }

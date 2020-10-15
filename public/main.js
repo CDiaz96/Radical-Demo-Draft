@@ -1,3 +1,4 @@
+
 var trash = document.getElementsByClassName("fa-trash");
 var contact= document.getElementById("contactList");
 
@@ -21,20 +22,45 @@ Array.from(trash).forEach(function (element) {
   });
 });
 
-// contact.addEventListener('click', function () {
-//   console.log(contact)
-//     fetch('users',{
-//       method:'put',
+//profile=====================================================================
+// var saveUserInfo = document.querySelector('#finish')
+// console.log(saveUserInfo);
+// saveUserInfo.addEventListener('click', function() {
+//   console.log('test')
+//   const editName = document.querySelector('.editName').value
+//   const editNumber = document.querySelector('.editNumber').value
+//   const editBio = document.querySelector('.editBio').value
+//   const editEmail = document.querySelector('.editEmail').value
+//   const editLocation = document.querySelector('.editLocation').value
+//   console.log(editName, 'name')
+//   console.log(editEmail, 'email')
+//   fetch('home', {
+//       method: 'put',
 //       headers: {
-//           'Content-Type': 'application/json'
-//         }
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({
+//         'name': editName,
+//         'phone': editNumber,
+//         'bio': editBio,
+//         'email': editEmail,
+//         'location': editLocation
 //       })
-//       .then(function(response){
-//         console.log(response)
-//       // window.location.reload()
-//       })
-//   });
-
+//     })
+//     .then(response => {
+//       if (response.ok) return response.json()
+//     })
+//     .then(data => {
+//       console.log(data)
+//       window.location.reload(true)
+//     })
+//   editForm.classList.add('hide')
+// })
+// //cancel editUserInfo
+// var cancelEdit = document.querySelector('.cancelEdit')
+// cancelEdit.addEventListener('click', function() {
+//   editForm.classList.add('hide')
+// })
 
 
 //NEWS API=====================================================================
@@ -68,96 +94,27 @@ function updateArticles(articles){
 
   var singleArticle = document.getElementById('articles')
   let listItem=document.createElement('li');
-  listItem.innerHTML=`<p class="spacer">${article.title} - <span>by:${article.author}</span></p>
-  <p>${article.description}</p><a href="${article.url}">Click Here to Read more!</a>`;
+  listItem.innerHTML=`
+  <br><div class="row align-items-center">
+
+  <div class="col-lg-5 col-xl-4">
+  <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4"><img class="img-fluid" src="${article.urlToImage}"><div class="mask rgba-white-slight"></div></div>
+  </div>
+
+  <div class="col-lg-7 col-xl-8">
+  <h4 class="font-weight-bold mb-3"><strong>${article.title}</strong></h4>
+
+  <p class="dark-grey-text">${article.description}</p>
+
+  <p class="font-weight-bold">by:${article.author}</p>
+
+  <span><a class="btn btn-primary btn-md mx-0 btn-rounded" href="${article.url} ">Click Here to Read more!</a></span>
+  </div>
+
+  </div><br>`;
+
   singleArticle.append(listItem);
   });
 
   console.log(articles)
 }
-
-
-
-//===================CHAT FEATURES==========================
-
-const chatForm = document.getElementById('chat-form');
-const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
-
-// Get username and room from URL
-const { username, room } = Qs.parse(location.search, {
-  ignoreQueryPrefix: true
-});
-
-const socket = io();
-
-// Join chatroom
-socket.emit('joinRoom', { username, room });
-
-// Get room and users
-socket.on('roomUsers', ({ room, users }) => {
-  outputRoomName(room);
-  outputUsers(users);
-});
-
-// Message from server
-socket.on('message', message => {
-  console.log(message);
-  outputMessage(message);
-
-  // Scroll down
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-});
-
-// Message submit
-chatForm.addEventListener('submit', e => {
-  e.preventDefault();
-
-  // Get message text
-  let msg = e.target.elements.msg.value;
-
-  msg = msg.trim();
-
-  if (!msg){
-    return false;
-  }
-
-  // Emit message to server
-  socket.emit('chatMessage', msg);
-
-  // Clear input
-  e.target.elements.msg.value = '';
-  e.target.elements.msg.focus();
-});
-
-// Output message to DOM
-function outputMessage(message) {
-  const div = document.createElement('div');
-  div.classList.add('message');
-  const p = document.createElement('p');
-  p.classList.add('meta');
-  p.innerText = message.username;
-  p.innerHTML += `<span>${message.time}</span>`;
-  div.appendChild(p);
-  const para = document.createElement('p');
-  para.classList.add('text');
-  para.innerText = message.text;
-  div.appendChild(para);
-  document.querySelector('.chat-messages').appendChild(div);
-}
-
-// Add room name to DOM
-function outputRoomName(room) {
-  roomName.innerText = room;
-}
-
-// Add users to DOM
-function outputUsers(users) {
-  userList.innerHTML = '';
-  users.forEach(user=>{
-    const li = document.createElement('li');
-    li.innerText = user.username;
-    userList.appendChild(li);
-  });
- }
