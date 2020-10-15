@@ -49,17 +49,18 @@ module.exports = function(app, passport, db) {
     });
 //CONTACTS PAGE========================
     app.get('/contact', isLoggedIn, function(req, res) {
-        db.collection('messages').find().toArray((err, result) => {
+        db.collection('users').find().toArray((err, result) => {
           // let test= db.collection('').find().toArray()
           console.log('hello!!')
           if (err) return console.log(err)
           res.render('contact.ejs', {
             user : req.user,
-            messages: result
           })
         })
     });
-    // LOGOUT ==============================
+
+
+// LOGOUT ==============================
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
@@ -77,7 +78,19 @@ module.exports = function(app, passport, db) {
 
     })
 
+//Contacts=============
 
+// app.put('/contact', (req, res) => {
+//   console.log(req)
+//   db.collection('users').save({email: req.body.email, organization: req.body.organization}, (err, result) => {
+//     if (err) return console.log(err)
+//     console.log('saved to database')
+//     res.redirect('/contact')
+//   })
+//
+// })
+
+/// delete============================
     app.delete('/messages', (req, res) => {
       db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
         if (err) return res.send(500, err)
