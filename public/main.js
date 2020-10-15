@@ -1,6 +1,5 @@
 
 var trash = document.getElementsByClassName("fa-trash");
-var contact= document.getElementById("contactList");
 
 
 Array.from(trash).forEach(function (element) {
@@ -21,46 +20,6 @@ Array.from(trash).forEach(function (element) {
     })
   });
 });
-
-//profile=====================================================================
-// var saveUserInfo = document.querySelector('#finish')
-// console.log(saveUserInfo);
-// saveUserInfo.addEventListener('click', function() {
-//   console.log('test')
-//   const editName = document.querySelector('.editName').value
-//   const editNumber = document.querySelector('.editNumber').value
-//   const editBio = document.querySelector('.editBio').value
-//   const editEmail = document.querySelector('.editEmail').value
-//   const editLocation = document.querySelector('.editLocation').value
-//   console.log(editName, 'name')
-//   console.log(editEmail, 'email')
-//   fetch('home', {
-//       method: 'put',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         'name': editName,
-//         'phone': editNumber,
-//         'bio': editBio,
-//         'email': editEmail,
-//         'location': editLocation
-//       })
-//     })
-//     .then(response => {
-//       if (response.ok) return response.json()
-//     })
-//     .then(data => {
-//       console.log(data)
-//       window.location.reload(true)
-//     })
-//   editForm.classList.add('hide')
-// })
-// //cancel editUserInfo
-// var cancelEdit = document.querySelector('.cancelEdit')
-// cancelEdit.addEventListener('click', function() {
-//   editForm.classList.add('hide')
-// })
 
 
 //NEWS API=====================================================================

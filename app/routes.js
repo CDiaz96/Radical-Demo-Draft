@@ -76,6 +76,7 @@ module.exports = function(app, passport, db, multer) {
         })
     });
 
+
 //==============================UPDATES SECTION=================================
 
     app.get('/updates', isLoggedIn, function(req, res) {
@@ -128,7 +129,16 @@ module.exports = function(app, passport, db, multer) {
           })
         })
     });
-
+    app.post('/contact', isLoggedIn, function(req, res) {
+        db.collection('users').find().toArray((err, allUsers) => {
+          // let test= db.collection('').find().toArray()
+          if (err) return console.log(err)
+          res.render('contact.ejs', {
+            user : req.user,
+            contacts: allUsers
+          })
+        })
+    });
 //============================CHAT PAGE=====================================
     app.get('/chat', isLoggedIn, function(req, res) {
 

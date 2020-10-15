@@ -9,18 +9,15 @@
       <h2 class="text-center mx-auto font-weight-bold mb-4 pb-2">Contact Us</h2>
       <div class="row">
 
-    <% for(var i=0;i <contacts.length; i++) {%>
-          <% console.log("user from contacts.ejs", contacts[i])%>
+
 
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
           <div class="p-4">
             <div
               class="avatar w-100 white d-flex justify-content-center align-items-center">
-              <img id="topImg2"
-                src="../<%= contacts[i].local.profileImg %>"
-                class="img-fluid rounded-circle z-depth-1"/>
+              <img id="topImg2"src="../<%=contacts[i].local.profileImg%>"class="img-fluid rounded-circle z-depth-1">
             </div>
-          <a href="/chat?otherUserId=<%= contacts[i]._id %>">
+          <a href="/chat?otherUserId=<%= contacts[i]._id%>">
             <div class="text-center mt-3">
               <h6 class="font-weight-bold pt-2">
                 <span><%= contacts[i].local.firstname %></span>
@@ -38,12 +35,12 @@
            </a>
           </div>
         </div>
-      <% } %>
-  <% } %>
+
+
 
           </div>
         </section>
       </div>
-
+<% } %>
 
 <%- include('footer'); -%>

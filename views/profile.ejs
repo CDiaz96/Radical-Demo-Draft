@@ -153,33 +153,37 @@
 
         </div>
 
-        <!-- File Upload -->
-        <label for="file-to-upload">Choose a Profile Picture</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-          </div>
-          <div class="custom-file">
-            <input  type="file" name="file-to-upload" class="custom-file-input" id="inputGroupFile01"
-            aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-          </div>
+        <textarea name="description" class="form-control rounded" id="message" rows="3" placeholder="Tell us about Yourself"></textarea>
+
+
+
+      <!-- File Upload -->
+
+      <!-- <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
         </div>
-
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="form-group mb-4">
-              <textarea name="description" class="form-control rounded" id="message" rows="3" placeholder="Tell us about Yourself"></textarea>
-            </div>
-
-            <div class="text-center">
-              <button type="submit" class="btn btn-elegant">Submit</button>
-            </div>
-
-          </div>
+        <div class="custom-file">
+          <input type="file" name="file-to-upload" class="custom-file-input" id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
         </div>
+      </div> -->
 
+
+      <label for="file-to-upload">Profile Picture</label>
+       <input type="file" name="file-to-upload">
+
+
+       <div class="row">
+         <div class="col-md-12">
+
+           <div class="text-center">
+             <button type="submit" class="btn btn-elegant"> Submit</button>
+           </div>
+
+         </div>
+       </div>
 
       </form>
 

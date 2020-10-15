@@ -67,6 +67,8 @@ module.exports = function(passport) {
 
                 newUser.local.lastname = req.body.lastname;
 
+                newUser.local.lastname = req.body.description;
+
                 newUser.local.profileImg = req.body.profileImg;
 
 

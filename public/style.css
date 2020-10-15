@@ -2,59 +2,6 @@ body{
   padding-top:30px;
   word-wrap:break-word;
 }
-/* .jumbotron{
-  background-color:white;
-  width: 70%;
-  height: 500px;
-  margin-left: 80%;
-} */
-/* #profileForm{
-  width: 85%;
-  height: auto;
-  margin-left: 10%;
-  padding: 5%;
-  color: rgb(17,68,44);
-  border: 2px solid rgb(17,68,44);
-  background-color: rgba(250,234, 207,50%);
-} */
-/* #nav{
-  background-color: rgb(17,68,44);
-  text-align: center;
-  color: white;
-  width: 100%;
-  height: 100px;
-} */
-/* .uploadForm, #formUp, .formessages{
-  width:70%;
-  height: auto;
-  margin-left: 10%;
-  margin-top: 10%;
-}
-#forms{
-  width: 80%;
-  height: auto;
-  margin-left: 10%;
-  padding-bottom: 5%;
-  border: 2px solid rgb(17,68,44);
-}
-#sign{
-  background-color:white;
-  width: 60%;
-  height: 865px;
-  margin-left: 20%;
-}
-#cointainer{
-  background-color:white;
-  width: 40%;
-  height:400px;
-  margin-left: 32%;
-}
-
- .login, .sign{
-  background-image: url('https://data.whicdn.com/images/180851656/original.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
  #articles{
 margin-top: 0;
