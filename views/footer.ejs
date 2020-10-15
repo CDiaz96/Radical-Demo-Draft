@@ -50,6 +50,25 @@
 </footer>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+
+        var socket = io();
+        socket.on('chat message', function (msg) {
+          const jsonMsg = JSON.parse(msg)
+          if (jsonMsg.to === "<%= user._id %>" ) {
+            var answer = confirm ("You have a chat request from " + jsonMsg.from + ", would you like to connect?")
+            if(answer){
+            window.location.href = "/chat?otherUserId=" + jsonMsg.from + "&firstMsg=" + jsonMsg.msg
+          }
+          }
+        });
+
+    </script>
+
+
+
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
