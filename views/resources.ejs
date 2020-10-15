@@ -1,29 +1,9 @@
-<!doctype html>
-<html>
-<head>
-    <title>Radical</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body id="main">
- <div class="container-fluid">
+<%- include('head'); -%>
 
-    <!--Navbar -->
-    <nav>
+<%- include('nav'); -%>
 
-      <a href="/profile">Home</a>
-      <a href="/resources">Organizations</a>
-      <a href="/updates">News</a>
-      <a href="/forms">Forms</a>
-      <a href="/contact">Connect</a>
-      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      <div id="google_translate_element"></div>
 
-    </nav>
-  <!--/.Navbar -->
 
-    <div class="row">
 
          <!-- LOCAL INFORMATION
         <div class="col-sm-6">
@@ -45,190 +25,9 @@
             </div>
         </div> -->
 
-    <section class="resources">
+    <!-- <section class="resources">
           <h1>Organizations</h1>
 
-
-        <section class="resource">
-          <h4>Agencia ALPHA</h4>
-          <p>
-Areas of legal assistance:	Adjustment of Status, Asylum applications, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, NACARA, Naturalization/Citizenship, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	62 Northampton St, Suite H101, Boston, MA 02118
-<br>
-Contact:(617) 522-6382, <a href="http://www.agenciaalpha.org">http://www.agenciaalpha.org </a>, info@agenciaalpha.org</p>
-        </section>
-
-
-        <section class="resource">
-          <h4>Asian American Civic Association - Multi-Service Center</h4>
-          <p>
-Areas of legal assistance:	Adjustment of Status, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, Naturalization/Citizenship
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	87 Tyler St, 5th Floor, Boston, MA 02111
-<br>
-Contact:(617) 426-9492, <a href="http://www.aaca-boston.org">http://www.aaca-boston.org</a>, info@aaca-boston.org
-          </p>
-        </section>
-
-
-        <section class="resource">
-          <h4>Catholic Charities of Boston - Refugee and Immigration Services</h4>
-          <p>
-Areas of legal assistance:	Adjustment of Status, Asylum applications, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, NACARA, Naturalization/Citizenship, Removal hearings, Special Immigrant Juvenile Status, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA)
-<br>
-Location:	275 W. Broadway, South Boston, MA 02127
-<br>
-Contact:(617) 464-8100, <a href="http://www.ccab.org/index.html">http://www.ccab.org/index.html</a></p>
-        </section>
-
-
-        <section class="resource">
-          <h4>Centro Presente</h4>
-          <p>
-Areas of legal assistance:	Deferred Action for Childhood Arrivals (DACA)
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	12 Bennington Street, Suite 202, Boston, MA 02145
-<br>
-Contact:(857) 256-2981, <a href="http://www.cpresente.org">http://www.cpresente.org </a>, pmontes@cpresente.org</p>
-        </section>
-
-
-        <section class="resource">
-          <h4>De Novo: Center for Justice and Healing</h4>
-          <p>
-Areas of legal assistance:	Asylum applications, Special Immigrant Juvenile Status, U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court
-<br>
-Location:	47 Thorndike Street, Suite SB-LL-1, Cambridge, MA 02141
-<br>
-Contact:(617) 661-1010  <a href="https://www.denovo.org/" >https://www.denovo.org/</a></p>
-      </section>
-
-
-    <section class="resource">
-      <h4>Dominican Development Center</h4>
-      <p>
-Areas of legal assistance:	Employment authorization, Employment-based immigrant and non-immigrant petitions, Naturalization/Citizenship, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	42 Seaverns Ave, Boston, MA 02130
-<br>
-Contact:(617) 524-4029, <a href="http://dominicandevelopmentcenter.org">http://dominicandevelopmentcenter.org</a></p>
-    </section>
-
-
-    <section class="resource">
-      <h4>Greater Boston Legal Services - Immigration Unit (Boston Office)</h4>
-      <p>
-Areas of legal assistance:	Asylum applications, Deferred Action for Childhood Arrivals (DACA), Special Immigrant Juvenile Status, T visas, U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals
-<br>
-Location:	197 Friend St, Boston, MA 02114
-<br>
-Contact:(617) 371-1234,<a href="http://www.gbls.org">http://www.gbls.org</a></p>
-    </section>
-
-
-    <section class="resource">
-      <h4>Harvard University Law School - Immigration and Refugee Clinic</h4>
-      <p>
-Areas of legal assistance:	Asylum applications, Deferred Action for Childhood Arrivals (DACA), Removal hearings, Special Immigrant Juvenile Status, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions
-Types of legal assistance:	Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals
-<br>
-Location:	6 Everett St, Suite 3103, Cambridge, MA 02138
-<br>
-Contact:(617) 384-8165, <a href="http://www.harvardimmigrationclinic.org">http://www.harvardimmigrationclinic.org</a>, hirc@law.harvard.edu</p>
-    </section>
-
-
-    <section class="resource">
-      <h4>International Institute of New England (Boston Office)</h4>
-      <p>
-Areas of legal assistance:	Adjustment of Status, Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, Naturalization/Citizenship, T visas, Temporary Protected Status (TPS), U visas
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS, Representation before the Immigration Court
-<br>
-Location:	2 Boylston Street, 3rd floor, Boston, MA 02116
-<br>
-Contact:(617) 695-9990,<a href="http://www.iine.org/legal">http://www.iine.org/legal </a>, legal@iine.org</p>
-    </section>
-
-
-  <section class="resource">
-    <h4>Latinos Unidos en Massachusetts (LUMA)</h4>
-    <p>
-Areas of legal assistance:	Asylum applications, Consular Processing, Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, Naturalization/Citizenship
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	198 Ferry St, Everett, MA 02149
-<br>
-Contact:	(617) 381-0015, lumaboston@yahoo.com</p>
-  </section>
-
-
-  <section class="resource">
-    <h4>Massachusetts Immigrant and Refugee Advocacy Coalition (MIRA)</h4>
-    <p>
-Areas of legal assistance:	Naturalization/Citizenship
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	105 Chauncy Street, Suite 901, Boston, MA 02111
-<br>
-Contact:(617) 350-5480, <a href="http://www.miracoalition.org">http://www.miracoalition.org</a>, citizenship@miracoalition.org</p>
-  </section>
-
-
-  <section class="resource">
-    <h4>Political Asylum / Immigration Representation Project</h4>
-     <p>
-Areas of legal assistance:	Adjustment of Status, Asylum applications, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Habeas Corpus, NACARA, Removal hearings, Special Immigrant Juvenile Status, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals
-<br>
-Location:	98 North Washington Street, Suite 106, Boston, MA 02114
-<br>
-Contact:(617) 742-9296, <a href="http://www.pairproject.org">http://www.pairproject.org</a>, asharma@pairproject.org</p>
-  </section>
-
-
-  <section class="resource">
-    <h4>Project Citizenship</h4>
-    <p>
-Areas of legal assistance:	Naturalization/Citizenship
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	4 Faneuil South Market Building, 3rd Floor, Boston, MA 02109
-<br>
-Contact:(617) 694-5949, <a href="http://projectcitizenship.org">http://projectcitizenship.org</a>, info@projectcitizenship.org</p>
-  </section>
-
-
-  <section class="resource">
-    <h4>Rian Immigrant Center</h4>
-    <p>
-Areas of legal assistance:	Adjustment of Status, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, Naturalization/Citizenship, Special Immigrant Juvenile Status, Temporary Protected Status (TPS), Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS
-<br>
-Location:	One State Street, 800, Boston, MA 02109
-<br>
-Contact:(617) 542-7654, <a href="https://www.riancenter.org">https://www.riancenter.org </a>, rmillar@riancenter.org</p>
-  </section>
 
 
   <section class="resource">
@@ -240,35 +39,109 @@ Types of legal assistance:	Help completing forms, Filings with USCIS, Representa
 <br>
 Location:	120 Tremont St, Suite 150, Boston, MA 02108
 <br>
-Contact:(617) 573-8644, <a href="https://www.suffolk.edu/law/academics-clinics/clinics-experiential-opportunities/clinics/immigration">https://www.suffolk.edu/law/academics-clinics/clinics-experiential-opportunities/clinics/immigration</a></p>
-  </section>
+<!-- Contact:(617) 573-8644, <a href="https://www.suffolk.edu/law/academics-clinics/clinics-experiential-opportunities/clinics/immigration">https://www.suffolk.edu/law/academics-clinics/clinics-experiential-opportunities/clinics/immigration</a></p>
+  </section> -->
 
 
-  <section class="resource">
-    <h4>Victim Rights Law Center</h4>
-    <p>
-Areas of legal assistance:	Adjustment of Status, Asylum applications, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, Naturalization/Citizenship, Removal hearings, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions
-<br>
-Types of legal assistance:	Help completing forms, Filings with USCIS, Representation before the Immigration Court
-<br>
-Location:	115 Broad Street, 3rd Floor, Boston, MA 02110
-<br>
-Contact:(617) 399-6720 ext. 19, <a href="http://www.victimrights.org">http://www.victimrights.org</a>, legalhelp@victimrights.org</p>
-  </section>
 
-    </section>
+
+
+
+<div class="container z-depth-1 my-5 py-5">
+
+
+  <section>
+
+    <style>
+      .border-top {
+        border-top-width: 2px !important;
+      }
+  	</style>
+
+
+  <section>
+
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5">Need assistance? Find the organization that fits your needs and receive support! </p>
+
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-6 col-xl-4">
+        <h5 class="font-weight-normal"><a class="dark-grey-text" href="http://www.agenciaalpha.org">Agencia ALPHA</a></h5>
+        <p class="small grey-text">Location: 62 Northampton St, Suite H101,<br> Boston, MA 02118 <br>Contact:(617) 522-6382</p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="text-muted mb-5 pb-2">Areas of legal assistance:	Asylum applications, Deferred Action for Childhood Arrivals (DACA), Removal hearings, Special Immigrant Juvenile Status, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions<br>Types of legal assistance:	Help completing forms, Filings with USCIS</p>
+
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <h5 class="font-weight-normal"><a class="dark-grey-text" href="http://dominicandevelopmentcenter.org">Dominican Development Center</a></h5>
+        <p class="small grey-text">Location: 42 Seaverns Ave,<br> Boston, MA 02130 <br>Contact:( 617) 524-4029</p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="text-muted mb-5 pb-2">Areas of legal assistance:	Employment authorization, Employment-based immigrant and non-immigrant petitions, Naturalization/Citizenship, Violence Against Women Act (VAWA) petitions<br>Types of legal assistance:	Help completing forms, Filings with USCIS</p>
+
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <h5 class="font-weight-normal"><a class="dark-grey-text" href="http://dominicandevelopmentcenter.org">Harvard University Law School - Immigration and Refugee Clinic</a></h5>
+        <p class="small grey-text">Location: 6 Everett St, Suite 3103,<br>Cambridge, MA 02138<br>Contact:(617) 384-8165 <br>hirc@law.harvard.edu</p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="text-muted mb-5 pb-2">Areas of legal assistance:	Employment authorization, Employment-based immigrant and non-immigrant petitions, Naturalization/Citizenship, Violence Against Women Act (VAWA) petitions<br>Types of legal assistance:	Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals</p>
+
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <h5 class="font-weight-normal"><a class="dark-grey-text" href="http://www.pairproject.org">Political Asylum / Immigration Representation Project</a></h5>
+        <p class="small grey-text">Location: 98 North Washington Street, Suite 106,<br> Boston, MA 02114<br>Contact:(617) 742-9296<br>
+        asharma@pairproject.org</p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="text-muted mb-5 pb-2">Areas of legal assistance:	Adjustment of Status, Asylum applications, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Habeas Corpus, NACARA, Removal hearings, Special Immigrant Juvenile Status, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions<br>Types of legal assistance:	Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals</p>
+
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <h5 class="font-weight-normal"><a class="dark-grey-text" href="http://www.victimrights.org">Victim Rights Law Center</a></h5>
+        <p class="small grey-text">Location: 115 Broad Street, 3rd Floor,<br> Boston, MA 02110<br>
+        Contact: (617) 399-6720 ext. 19 <br>legalhelp@victimrights.org</p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="text-muted mb-5 pb-2">Areas of legal assistance:	Adjustment of Status, Asylum applications, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, Naturalization/Citizenship, Removal hearings, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions <br>Types of legal assistance:	Help completing forms, Filings with USCIS, Representation before the Immigration Court</p>
+
+      </div>
 
     </div>
+
+  </section>
 </div>
 
-<script src="main.js"></script>
-<script>function googleTranslateElementInit() {
-new google.translate.TranslateElement({
-pageLanguage: 'en'
-}, 'google_translate_element');
-}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+
+        var socket = io();
+        socket.on('chat message', function (msg) {
+          const jsonMsg = JSON.parse(msg)
+          if (jsonMsg.to === "<%= user.local._id %>" ) {
+            var answer = confirm ("You have a chat request from " + jsonMsg.from + ", would you like to connect?")
+            if(answer){
+            window.location.href = "/chat?otherUserId=" + jsonMsg.from + "&firstMsg=" + jsonMsg.msg
+          }
+          }
+        });
+
+    </script>
 
 
-</body>
-</html>
+
+
+
+<%- include('footer'); -%>

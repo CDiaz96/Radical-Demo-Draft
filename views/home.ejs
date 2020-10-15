@@ -1,0 +1,94 @@
+<%- include('head'); -%>
+
+<%- include('nav'); -%>
+
+<body id="main">
+
+
+
+<!--Persons Profile--------------------------------->
+
+
+
+<div class="container my-5">
+
+  <section>
+
+    <div class="card mb-4">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <img class="img-fluid rounded-left" src="../<%=user.local.profileImg%>" alt="project image">
+          <%console.log(user.profileImg, "THIS IS USER LOCAL")%>
+        </div>
+
+        <div class="col-md-6 p-5 align-self-center">
+
+          <ul class="list-unstyled font-small mt-5 mb-0">
+            <li>
+              <p class="text-uppercase mb-2"><strong>Name</strong></p>
+              <p class="text-muted mb-4"><%=user.local.firstname%></p>
+              <p class="text-muted mb-4"><%=user.local.lastname%></p>
+            </li>
+
+            <li>
+              <p class="text-uppercase mb-2"><strong>Email</strong></p>
+              <p class="text-muted mb-4"><%=user.local.email%></p>
+            </li>
+
+            <li>
+              <p class="text-uppercase mb-2"><strong>Organization or Company</strong></p>
+              <p class="text-muted mb-4"><%=user.local.organization%></p>
+            </li>
+
+          </ul>
+
+          <h5 class="font-weight-normal mb-3">About me</h5>
+
+          <p class="text-muted"><%=user.local.description%></p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+
+        var socket = io();
+        socket.on('chat message', function (msg) {
+          const jsonMsg = JSON.parse(msg)
+          if (jsonMsg.to === "<%= user._id %>" ) {
+            var answer = confirm ("You have a chat request from " + jsonMsg.from + ", would you like to connect?")
+            if(answer){
+            window.location.href = "/chat?otherUserId=" + jsonMsg.from + "&firstMsg=" + jsonMsg.msg
+          }
+          }
+        });
+
+    </script>
+
+
+
+
+
+
+<%- include('footer'); -%>

@@ -1,58 +1,190 @@
-<!doctype html>
-<html>
-<head>
-    <title>Radical</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body id="main">
- <div class="container-fluid">
+<%- include('head'); -%>
 
-    <!--Navbar -->
-    <nav>
-      <a href="/profile">Home</a>
-      <a href="/resources">Organizations</a>
-      <a href="/updates">News</a>
-      <a href="/forms">Forms</a>
-      <a href="/contact">Connect</a>
-      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      <div id="google_translate_element"></div>
-
-    </nav>
-  <!--/.Navbar -->
+<%- include('nav'); -%>
 
 
-    <!-- <div class="row"> -->
 
-        <!-- LOCAL INFORMATION -->
-        <!-- <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+<!-- <form action="/home" enctype="multipart/form-data" method="post">
+  <fieldset>
+    <legend>General Information</legend>
+    <div class="form-group row">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" name="firstname" placeholder="First Name">
+    </div>
+    <div class="form-group row">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+    </div>
+    <div class="form-group row">
+      <label for="orgname">Org/Company Name</label>
+      <input type="text" class="form-control" name="organization " placeholder="Org/Company">
+    </div>
+    <div class="form-group row d-flex flex-column">
+    <label for="file-to-upload">Profile Picture</label>
+     <input type="file" name="file-to-upload">
+    </div>
 
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
+<legend>Who You Are</legend>
 
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
+<div class="form-group form-group-lg">
+<div class="custom-control custom-radio">
+  <input type="radio" name="who" id="customRadio1"class="custom-control-input" checked="" value="Org/Co">
+  <label class="custom-control-label" for="customRadio1">Org/Company</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" name="who" id="customRadio2"class="custom-control-input" value="User">
+  <label class="custom-control-label" for="customRadio2">User</label>
+</div>
+</div>
 
+<textarea name="description" rows="8" cols="80"></textarea>
+
+
+<button type="submit" class="btn btn-warning btn-default btn-block" value="Upload" id="finish">Finish</button>
+</form>
+
+</div>-->
+
+
+
+<% if (user.local.organization) { %>
+
+<div class="container z-depth-1 my-5 px-0">
+
+  <!--Section: Content-->
+  <section class="p-5 my-md-5 text-center"
+    style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg); background-size: cover; background-position: center center;">
+
+    <!-- Section heading -->
+    <h3 class="text-center font-weight-bold text-white mt-5 mb-3">Welcome</h3>
+    <!-- Section description -->
+    <h4 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">Let's Create Your Profile! </h4>
+
+    <form class="mb-5 mx-md-5" action="/home" method="post" enctype="multipart/form-data">
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+
+          <!-- First Name -->
+          <input type="text" id="name" class="form-control mb-4" name="firstname" placeholder="First Name">
+
+        </div>
+        <div class="col-md-4 mb-4">
+
+          <!-- Last Name -->
+          <input type="text" id="name" class="form-control mb-4" name="lastname" placeholder="Last Name">
+
+        </div>
+        <div class="col-md-4 mb-4">
+
+          <!--Org/Company -->
+          <input type="text" id="email" class="form-control mb-4" name="organization " placeholder="Org/Company">
+
+        </div>
+
+        <textarea name="description" class="form-control rounded" id="message" rows="3" placeholder="Tell us about Yourself"></textarea>
+
+
+
+      <!-- File Upload -->
+
+      <!-- <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" name="file-to-upload" class="custom-file-input" id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
+        </div>
+      </div> -->
+
+
+      <label for="file-to-upload">Profile Picture</label>
+       <input type="file" name="file-to-upload">
+
+
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-elegant"> Submit</button>
+          </div>
+
+        </div>
+      </div>
+
+
+    </form>
+
+  </section>
+  <!--Section: Content-->
+</div>
+
+<% } else { %>
+
+  <div class="container z-depth-1 my-5 px-0">
+
+    <!--Section: Content-->
+    <section class="p-5 my-md-5 text-center"
+      style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg); background-size: cover; background-position: center center;">
+
+      <!-- Section heading -->
+      <h3 class="text-center font-weight-bold text-white mt-5 mb-3">Welcome</h3>
+      <!-- Section description -->
+      <h4 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">Let's Create Your Profile! </h4>
+
+      <form class="mb-5 mx-md-5" action="/home" method="post" enctype="multipart/form-data">
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+
+            <!-- First Name -->
+            <input type="text" id="name" class="form-control mb-4" name="firstname" placeholder="First Name">
+
+          </div>
+          <div class="col-md-4 mb-4">
+
+            <!-- Last Name -->
+            <input type="text" id="name" class="form-control mb-4" name="lastname" placeholder="Last Name">
+
+          </div>
+
+        </div>
+
+        <!-- File Upload -->
+        <label for="file-to-upload">Choose a Profile Picture</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+          </div>
+          <div class="custom-file">
+            <input  type="file" name="file-to-upload" class="custom-file-input" id="inputGroupFile01"
+            aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="form-group mb-4">
+              <textarea name="description" class="form-control rounded" id="message" rows="3" placeholder="Tell us about Yourself"></textarea>
             </div>
-        </div> -->
-      
 
-<script src="main.js"></script>
-<script>function googleTranslateElementInit() {
-new google.translate.TranslateElement({
-pageLanguage: 'en'
-}, 'google_translate_element');
-}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <div class="text-center">
+              <button type="submit" class="btn btn-elegant">Submit</button>
+            </div>
 
-</body>
-</html>
+          </div>
+        </div>
+
+
+      </form>
+
+    </section>
+    <!--Section: Content-->
+  </div>
+
+  <% } %>

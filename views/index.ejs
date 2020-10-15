@@ -1,37 +1,80 @@
-<!doctype html>
-<html>
-<head>
-    <title>Radical</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="first">
+<%- include('head'); -%>
 
-<h1 class="top"> Radical</h1>
+<body>
 
-<header class="indexHeader">
-  <nav>
-    <a href="/profile" class="btn btn-default"><span class="fa fa-user"></span>Home</a>
 
-  <section class="logins">
+<header>
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg scrolling-navbar navbar-dark z-depth">
 
-    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
-    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Client Signup</a>
-    <a href="/clientsignup" class="btn btn-default"><span class="fa fa-user"></span>User Signup</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+    aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
 
-   </section>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+    <h1 id="title" >Radical</h1>
+    <ul class="navbar-nav ml-auto">
 
-  </nav>
+       <li class="nav-item">
+        <button type="button" class="btn blue-gradient btn-margin btn-rounded"><a class="nav-link" href="/login">
+              Login
+            </a></button>
+          </li>
+
+        <li class="nav-item">
+          <button type="button" class="btn blue-gradient btn-margin btn-rounded"><a class="nav-link" href="/signup">
+            Client SignUp
+          </a></button>
+
+        </li>
+
+        <li class="nav-item">
+          <button type="button" class="btn blue-gradient btn-margin btn-rounded"><a class="nav-link" href="/clientsignup">
+          User SignUp
+          </a></button>
+        </li>
+
+    </ul>
+  </div>
+</nav>
+
+<!--/.Navbar -->
+
+
+<section class="view">
+
+   <div class="row">
+
+     <div class="col-md-6">
+
+       <div class="view">
+         <img id="crew" src="img/diverse.png" alt="diverse" class="img-fluid" alt="smaple image">
+         <div class="mask flex-center hm-gradient">
+         </div>
+       </div>
+
+     </div>
+     <div class="col-md-6">
+
+       <div class="d-flex flex-column justify-content-center align-items-center h-100">
+         <h1 class="heading">Material Design for Bootstrap</h1>
+         <h4 class="subheading font-weight-bold">World's most popular framework for building responsive, mobile-first websites and apps</h4>
+
+       </div>
+
+     </div>
+
+   </div>
+
+ </section>
+
 </header>
 
-     <img id="crew" src="img/diverse.jpg" alt="diverse">
 
-      <section  id="hold">
-        <h2>About Us</h2>
-      </section>
 
-<footer></footer>
+
+
 
 
 

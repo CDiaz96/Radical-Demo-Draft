@@ -17,13 +17,22 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 
+var multer = require('multer');
 var db
+
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
+
+const users ={}
+
+
+
 
 // configuration ===============================================================
 mongoose.connect(configDB.url, (err, database) => {
   if (err) return console.log(err)
   db = database
-  require('./app/routes.js')(app, passport, db);
+  require('./app/routes.js')(app, passport, db, multer,io);
 }); // connect to our database
 
 //app.listen(port, () => {
@@ -63,5 +72,17 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //require('./app/routes.js')(app, passport, db); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-app.listen(port);
-console.log('The magic happens on port ' + port);
+// app.listen(port);
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
+  });
+});
+
+// app.listen(port);
+
+http.listen(port, function(){
+  console.log(`listening on *${port}`);
+});

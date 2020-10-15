@@ -1,39 +1,53 @@
-<!doctype html>
-<html>
-<head>
-    <title>Radical</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body id="main">
- <div class="container-fluid">
+<%- include('head'); -%>
 
-    <!--Navbar -->
-    <nav>
+<%- include('nav'); -%>
 
-      <a href="/profile">Home</a>
-      <a href="/resources">Organizations</a>
-      <a href="/updates">News</a>
-      <a href="/forms">Forms</a>
-      <a href="/contact">Connect</a>
-      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      <div id="google_translate_element"></div>
+<% if (user.local.organization) { %>
 
-    </nav>
-  <!--/.Navbar -->
+  <div class="container pt-5 my-5 z-depth-1">
+    <section class="p-md-3 mx-md-5 text-center">
+      <h2 class="text-center mx-auto font-weight-bold mb-4 pb-2">Contact Us</h2>
+      <div class="row">
+
+    <% for(var i=0;i <contacts.length; i++) {%>
+          <% console.log("user from contacts.ejs", contacts[i])%>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="p-4">
+            <div
+              class="avatar w-100 white d-flex justify-content-center align-items-center">
+              <img id="topImg2"
+                src="../<%= contacts[i].local.profileImg %>"
+                class="img-fluid rounded-circle z-depth-1"/>
+            </div>
+          <a href="/chat?otherUserId=<%= contacts[i]._id %>">
+            <div class="text-center mt-3">
+              <h6 class="font-weight-bold pt-2">
+                <span><%= contacts[i].local.firstname %></span>
+                <span><%= contacts[i].local.lastname %></span>
+                <br>
+                <span><%= contacts[i].local.organization%></span>
+              </h6>
+              <p class="text-muted">
+                <small><i>
+
+                    <span><%= contacts[i].local.email %></span>
+               </i></small>
+              </p>
+            </div>
+           </a>
+          </div>
+        </div>
+      <% } %>
+  <% } %>
+
+          </div>
+        </section>
+      </div>
 
 
 
 
 
-<script src="main.js"></script>
-<script>function googleTranslateElementInit() {
-new google.translate.TranslateElement({
-pageLanguage: 'en'
-}, 'google_translate_element');
-}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-</body>
-</html>
+<%- include('footer'); -%>

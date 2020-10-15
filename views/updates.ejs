@@ -1,50 +1,10 @@
-<!doctype html>
-<html>
-<head>
-    <title>Radical</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+<%- include('head'); -%>
+
+<%- include('nav'); -%>
+
 <body id="main">
- <div class="container-fluid">
+ <!-- <div class="container-fluid">
 
-    <!--Navbar -->
-    <nav>
-
-      <a href="/profile">Home</a>
-      <a href="/resources">Organizations</a>
-      <a href="/updates">News</a>
-      <a href="/forms">Forms</a>
-      <a href="/contact">Connect</a>
-      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      <div id="google_translate_element"></div>
-
-    </nav>
-  <!--/.Navbar -->
-
-
-    <!-- <div class="row">
-
-         LOCAL INFORMATION
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div> -->
 
       <section class="news">
         <h1>Most Recent News</h1>
@@ -56,15 +16,70 @@
         </ul>
       </section>
 
-    </div>
+    </div> -->
 
+
+    <!-- <div class="container mt-5"> -->
+
+
+      <!--Section: Content-->
+      <section class="dark-grey-text">
+
+        <!-- Section heading -->
+        <h1 class="text-center font-weight-bold mb-4 pb-2">Recent News</h1>
+        <!-- Section description -->
+         <p class="text-center mx-auto w-responsive mb-5">Stay up to date on the most recent news regarding the immigrant community!</p>
+
+      	<!-- Grid row -->
+        <!-- <div class="row align-items-center"> -->
+          <ul id="articles">
+
+          <!-- Grid column -->
+          <!-- <div class="col-lg-5 col-xl-4"> -->
+
+
+            <!-- Featured image -->
+            <!-- <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+          </div> -->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+        <!-- <div class="col-lg-7 col-xl-8"> -->
+
+
+            <!-- Post title -->
+            <!-- <h4 class="font-weight-bold mb-3"><strong>Title of the news</strong></h4> -->
+            <!-- Excerpt -->
+            <!-- <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+              quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus
+              et aut officiis cum soluta nobis est eligendi placeat facere aut rerum.</p> -->
+            <!-- Post data -->
+            <!-- <p>by <a class="font-weight-bold">Jessica Clark</a>, 19/04/2018</p> -->
+            <!-- Read more button -->
+            <!-- <a class="btn btn-primary btn-md mx-0 btn-rounded">Read more</a> -->
+            <!-- <img src="" alt=""> -->
+
+
+        <!-- </div> -->
+          <!-- Grid column -->
+        </ul>
+        <!-- </div> -->
+        <!-- Grid row -->
+
+        <!-- <hr class="my-5"> -->
+
+      </section>
+      <!--Section: Content-->
+
+
+    <!-- </div> -->
 
 <script src="main.js"></script>
-<script>function googleTranslateElementInit() {
-new google.translate.TranslateElement({
-pageLanguage: 'en'
-}, 'google_translate_element');
-}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
+
+<%- include('footer'); -%>
